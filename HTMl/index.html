@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+    <link rel="shortcut icon" href="/icon/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="left ">
+            <div class="cancel">
+                <img class="invert" src="/icon/cancel.svg" alt="cancel">
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img class="invert" src="/icon/logo.svg" alt="Logo">
+                </div>
+                <ul>
+                    <li><img class="invert" src="/icon/home.svg" alt="Home">Home</li>
+                    <li><img class="invert" src="/icon/search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+
+
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <h2> Your Library</h2>
+
+                </div>
+                <div class="songlist">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <div><a href="https://www.spotify.com/in-en/legal/" data-encore-id="textLink" id=""> <span
+                            data-encore-id="type">Legal</span></a></div>
+                <div><a href="https://www.spotify.com/in-en/safetyandprivacy/" data-encore-id="textLink" id=""><span
+                            data-encore-id="type">Safety &amp; Privacy Center</span></a></div>
+                <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/" data-encore-id="textLink" id=""><span
+                            data-encore-id="type">Privacy Policy</span></a></div>
+                <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/" data-encore-id="textLink" id=""><span
+                            data-encore-id="type">Cookies</span></a></div>
+                <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3" data-encore-id="textLink"
+                        id=""><span data-encore-id="type">About Ads</span></a></div>
+                <div><a href="https://www.spotify.com/in-en/accessibility/" data-encore-id="textLink" id=""><span
+                            data-encore-id="type">Accessibility</span></a></div>
+            </div>
+        </div>
+
+
+        <div class="right bg-grey rounded">
+            <div class="header">
+                <div class="nav">
+                    <div class="flex">
+                        <img class="invert hamburger" src="/icon/hamburger.svg" alt="">
+
+                        <svg class="invert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24" color="#000000" fill="none">
+                            <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <svg class="invert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24" color="#000000" fill="none">
+                            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+                    <button class="signupbtn">Sign up</button>
+                    <button class="loginbtn">Log in</button>
+                </div>
+
+            </div>
+            <div class="spotify-playlist">
+                <h1>Spotify PlayList</h1>
+                <div class="cardContainer">
+                    <!-- <div data-folder="STK" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BYTJmYmI0YWQtYjI3MC00MWU4LWI2OTQtNDYyOGEyNThjZjg3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            jsaction="" class="sFlh5c FyHeAf iPVvYb" sizes="(max-width: 1280px) 232px, 192px"
+                            alt="Sanam Teri Kasam (2016) - IMDb" jsname="kn3ccd">
+                        <h2>Sanam Teri Kasam</h2>
+                        <p>Original Motion Picture Soundtrack</p>
+                    </div>
+
+                    <div data-folder="2state" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/1/12/2_States_poster.jpg" jsaction=""
+                            class="sFlh5c FyHeAf iPVvYb" sizes="(max-width: 1280px) 232px, 192px"
+                            alt="2 States (2014 film) - Wikipedia" jsname="kn3ccd">
+                        <h2>2-State</h2>
+                        <p>Original Motion Picture Soundtrack</p>
+                    </div>
+
+
+                    <div data-folder="Rustom" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSJtYIykV1RVI43AY5Nh4pE73KRjFmTXZa58hq9O4cdS7qlZSsoAg3TVabm6nfYSIkSHT1yEA"
+                            class="sFlh5c FyHeAf" alt="" jsname="JuXqh" sizes="(max-width: 1280px) 232px, 192px"
+                            data-ilt="1752724660940">
+                        <h2>Rustom</h2>
+                        <p>Original Motion Picture Soundtrack</p>
+                    </div>
+
+
+                    <div data-folder="J" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAtVf3Z6FEPWFzLWG3bMq59eLemw2Zsjaj8Q&amp;s"
+                            class="sFlh5c FyHeAf"
+                            alt="Housefull 5 song 'Laal Pari': Yo Yo Honey Singh creates a funky vibe in  first song from the comedy-drama #Laalpari #hosuefull @riteishd @asliyoyo  @akshaykumar @jacklinefre #soundaryasharma @duttsanjay @sonambajwa  @jacquelienefernandez #cinemaexpress"
+                            jsname="JuXqh" sizes="(max-width: 1280px) 232px, 192px" data-ilt="1752736612617">
+                        <h2>Songs</h2>
+                        <p>Original Motion Picture Soundtrack</p>
+                    </div>
+
+
+                    <div data-folder="new_song" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr_C4-jmfPSwgm0VJuzJ2MVuhorGXTcbGNIA&amp;s"
+                            class="sFlh5c FyHeAf"
+                            alt="Dinesh Vijan and Maddock Films’ Chor Bazari Phir Se – the romantic anthem  of Bhool Chuk Maaf - is out now., You fell in love to their iconic number  Chor Bazari. Get ready to fall in love again as ..."
+                            jsname="JuXqh" sizes="(max-width: 1280px) 232px, 192px" data-ilt="1752736919576">
+                        <h2>Songs</h2>
+                        <p>Original Motion Picture Soundtrack</p>
+                    </div>
+
+
+                    <div data-folder="90_songs" class="card ">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                                <circle cx="256" cy="256" r="256" fill="green" />
+                                <path
+                                    d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <img src="https://i.pinimg.com/736x/74/d8/e9/74d8e9dcf1e66013e55acaf63314eee0.jpg" jsaction=""
+                            class="sFlh5c FyHeAf iPVvYb" sizes="(max-width: 1280px) 232px, 192px"
+                            alt="Sridevi &amp; Anil Kapoor - Mr. India - Bollywood Classic" jsname="kn3ccd">
+                        <h2> 90 Songs</h2>
+                        <p>90's music </p>
+                    </div> -->
+
+
+
+                </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle">
+
+                        </div>
+                    </div>
+                    <div class="information">
+                        <div class="songinfo">
+
+                        </div>
+
+                        <div class="songbuttons">
+                            <img width="35" id="previous" src="/icon/previous.svg" alt="previous">
+                            <img width="35" id="play" src="/icon/play.svg" alt="play">
+                            <img width="35" id="next" src="/icon/next.svg" alt="next">
+                        </div>
+                        <div class="timenvol">
+                            <div class="songtime">
+
+                            </div>
+                            <div class="volume">
+                                <img class="invert" width="30" src="/icon/volume.svg" alt="">
+                                <div class="range">
+                                    <input type="range" name="volume">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/javascript/script.js"></script>
+</body>
+
+</html>
