@@ -40,8 +40,6 @@ async function getsongs(folder) {
             songs.push(song);
         }
     }
-
-
     
     //show all the song in the playlist
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
