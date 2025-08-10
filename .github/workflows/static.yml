@@ -33,14 +33,15 @@ jobs:
         with:
           # Upload only front-end files, exclude MP3 and unnecessary files
           path: |
-            index.html
-            *.html
-            assets/css
-            assets/js
-            assets/images
+            html
+            css
+            jvascript
+            icon
+            playlist
             !**/*.mp3
             !**/*.zip
             !README.md
+
 
       - name: Deploy to GitHub Pages
         id: deployment
