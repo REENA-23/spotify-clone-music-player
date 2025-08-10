@@ -43,7 +43,7 @@ async function getsongs(folder) {
 
 
     
-    //show all the sing in the playlist
+    //show all the song in the playlist
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
     songUL.innerHTML = "blank"
     for (const song of songs) {
@@ -68,6 +68,17 @@ async function getsongs(folder) {
 return songs;
 }
 
+// Auto-play next song when current song ends
+currentsong.addEventListener("ended", () => {
+    let currentFileName = decodeURIComponent(currentsong.src.split("/").pop());
+    let index = songs.indexOf(currentFileName);
+    
+    if (index !== -1 && index < songs.length - 1) {
+        playMusic(songs[index + 1]);
+    } else {
+        console.log("Playlist ended.");
+    }
+});
 
 
 const playMusic = (track, pause = false) => {
