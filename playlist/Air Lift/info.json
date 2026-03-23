@@ -1,4 +1,9 @@
 {
     "title":"Air Lift",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Dil Cheez Tujhe Dedi Airlift 128 Kbps.mp3",
+    "Soch Na Sake Airlift 128 Kbps.mp3",
+    "Tu Bhoola Jise Airlift 128 Kbps.mp3"
+  ]
 }

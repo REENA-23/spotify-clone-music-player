@@ -1,4 +1,10 @@
 {
     "title": "new songs",
-    "discription": "songs for you"
+    "description": "songs for you",
+    "songs": [
+    "Chor Bazari Phir se.mp3",
+    "Dum Dum.mp3",
+    "Laal Pari.mp3",
+    "Sawan Aaya Hai.mp3"
+  ]
 }

@@ -1,4 +1,9 @@
 {
     "title":"90 songs",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Jiya Jale.mp3",
+    "Kate Nahin Kat Te.mp3",
+    "Satarangi Re.mp3"
+  ]
 }

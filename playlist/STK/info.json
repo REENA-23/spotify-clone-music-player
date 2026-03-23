@@ -1,4 +1,9 @@
 {
     "title":"Sanam Teri Kasam",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Kheech Meri Photo.mp3",
+    "Sanam Teri Kasam.mp3",
+    "Tera Chehra.mp3"
+  ]
 }

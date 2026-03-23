@@ -1,4 +1,9 @@
 {
     "title":"Rustom",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Dekha Hazaro Dafaa.mp3",
+    "Tere Bin Yaara.mp3",
+    "Tere Sang Yaara.mp3"
+  ]
 }

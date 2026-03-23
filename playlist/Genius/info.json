@@ -1,4 +1,10 @@
 {
     "title":"Genius",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Dil Meri Na Sune Genius 128 Kbps.mp3",
+    "Holi Biraj Ma Genius 128 Kbps.mp3",
+    "Pyar Le Pyar De Genius 128 Kbps.mp3",
+    "Tera Fitoor Genius 128 Kbps.mp3"
+  ]
 }

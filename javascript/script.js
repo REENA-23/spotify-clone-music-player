@@ -13,57 +13,39 @@ function formatTime(seconds) {
 
 
 async function getsongs(folder) {
-    currfolder = folder; // Store the current folder globally if needed
+    currfolder = folder;
 
-    // Fetch the directory listing
-    let a = await fetch(`http://127.0.0.1:5500/${currfolder}`);
-    let response = await a.text();
+    let res = await fetch(`/${folder}/info.json`);
+    let data = await res.json();
 
-    // Parse the HTML response
-    let div = document.createElement("div");
-    div.innerHTML = response;
+    songs = data.songs;
 
-    // Find all <a> tags (links to files)
-    let as = div.getElementsByTagName("a");
+    let songUL = document.querySelector(".songlist ul");
+    songUL.innerHTML = "";
 
-    songs = [];
-
-    for (let i = 0; i < as.length; i++) {
-        let href = as[i].href;
-        if (href.endsWith(".mp3")) {
-            // Extract just the file name
-            let song = href.split("/").pop();
-
-            // Decode %20 and other URI encodings
-            song = decodeURIComponent(song);
-
-            songs.push(song);
-        }
-    }
-    
-    //show all the song in the playlist
-    let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
-    songUL.innerHTML = "blank"
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<li> <img class="invert" src="/icon/music.svg" alt="">
-                            <div class="info">
-                                <div>${song}</div>
-                                <div>Movie</div>
-                            </div>
-                            <div class="playnow">
-                                <span>Play Now</span>
-                                <img class="invert" src="/icon/play.svg" alt="PlayNow">
-                            </div>  </li>`
+        songUL.innerHTML += `
+        <li>
+            <img class="invert" src="/icon/music.svg">
+            <div class="info">
+                <div>${song}</div>
+                <div>Song</div>
+            </div>
+            <div class="playnow">
+                <span>Play Now</span>
+                <img class="invert" src="/icon/play.svg">
+            </div>
+        </li>`;
     }
 
-    //Attach an event listener to every song
-    Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", element => {
-            console.log(e.querySelector(".info").firstElementChild.innerHTML)
-            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
-        })
+    // click event
+    Array.from(songUL.getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click", () => {
+            playMusic(e.querySelector(".info div").innerText.trim());
+        });
     });
-return songs;
+
+    return songs;
 }
 
 // Auto-play next song when current song ends
@@ -94,7 +76,7 @@ const playMusic = (track, pause = false) => {
 async function displayalbums() {
     console.log("displayalbums() called");
     
-    let a = await fetch(`http://127.0.0.1:5500/playlist/`);
+    let a = await fetch(`/playlist/`);
     let response = await a.text();
 
     console.log("Fetched /playlist/");
@@ -121,7 +103,7 @@ async function displayalbums() {
             if (!folder || folder.toLowerCase() === "playlist") continue;
 
             try {
-                let a = await fetch(`http://127.0.0.1:5500/playlist/${folder}/info.json`);
+                let a = await fetch(`/playlist/${folder}/info.json`);
                 let response = await a.json();
                 console.log("Loaded info.json for folder:", folder, response);
 

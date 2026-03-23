@@ -1,4 +1,10 @@
 {
     "title":"2-State",
-    "discription":"songs for you"
+    "description":"songs for you",
+    "songs": [
+    "Iski Uski.mp3",
+    "Locha-E-Ulfat.mp3",
+    "Mast Magan.mp3",
+    "Offo.mp3"
+  ]
 }
