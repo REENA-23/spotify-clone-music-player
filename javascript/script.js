@@ -74,61 +74,40 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayalbums() {
-    console.log("displayalbums() called");
-    
-    let a = await fetch(`/playlist/`);
-    let response = await a.text();
-
-    console.log("Fetched /playlist/");
-
-    let div = document.createElement("div");
-    div.innerHTML = response;
+    let folders = [
+        "STK",
+        "ABCD",
+        "Air Lift",
+        "Genius",
+        "new_song",
+        "Rustom",
+        "90_songs",
+        "2state"
+    ];
 
     let cardContainer = document.querySelector(".cardContainer");
-    if (!cardContainer) {
-        console.error("cardContainer not found!");
-        return;
-    }
+    cardContainer.innerHTML = "";
 
-    let anchors = div.getElementsByTagName("a");
-    let array = Array.from(anchors);
+    for (let folder of folders) {
+        try {
+            let res = await fetch(`/playlist/${folder}/info.json`);
+            let data = await res.json();
 
-    console.log("Found anchors: ", array);
-
-    for (let index = 0; index < array.length; index++) {
-        const e = array[index];
-        
-        if (e.href.includes("/playlist")) {
-            let folder = e.href.split("/").filter(Boolean).pop();
-            if (!folder || folder.toLowerCase() === "playlist") continue;
-
-            try {
-                let a = await fetch(`/playlist/${folder}/info.json`);
-                let response = await a.json();
-                console.log("Loaded info.json for folder:", folder, response);
-
-                cardContainer.innerHTML += `
-                    <div data-folder="${folder}" class="card">
-                        <div class="play">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
-                                <circle cx="256" cy="256" r="256" fill="green" />
-                                <path d="M188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z" fill="black"/>
-                            </svg>
-                        </div>
-                        <img src="/playlist/${folder}/cover.jpg">
-                        <h2>${response.title}</h2>
-                        <p>${response.discription}</p>
-                    </div>`;
-            } catch (error) {
-                console.error(`Error fetching info.json for folder ${folder}:`, error);
-            }
+            cardContainer.innerHTML += `
+                <div data-folder="${folder}" class="card">
+                    <div class="play">▶</div>
+                    <img src="/playlist/${folder}/cover.jpg">
+                    <h2>${data.title}</h2>
+                    <p>${response.description}</p>
+                </div>`;
+        } catch (error) {
+            console.log("Error loading:", folder);
         }
     }
 
-    // Attach event listeners
+    // click event
     document.querySelectorAll(".card").forEach(e => {
         e.addEventListener("click", async item => {
-            console.log("Card clicked:", item.currentTarget.dataset.folder);
             songs = await getsongs(`playlist/${item.currentTarget.dataset.folder}`);
             playMusic(songs[0]);
         });
