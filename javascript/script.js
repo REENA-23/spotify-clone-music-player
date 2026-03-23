@@ -44,11 +44,11 @@ async function getsongs(folder) {
   }
 
   //  CLICK EVENT
-  Array.from(document.querySelectorAll(".songlist li")).forEach((e) => {
-    e.addEventListener("click", () => {
-      playMusic(song);
-    });
+  Array.from(document.querySelectorAll(".songlist li")).forEach((e, index) => {
+  e.addEventListener("click", () => {
+    playMusic(songs[index]);
   });
+});
 
   return songs;
 }
